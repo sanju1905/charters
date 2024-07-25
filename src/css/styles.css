@@ -1,0 +1,19 @@
+.category__link {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
+  }
+  
+  .category__link:hover {
+    transform: scale(1.1);
+  }
+  .category__link1:hover{
+    transform: scale(1.1);
+    color: blue;
+  }
+  .category__link1{
+    font-weight: bold;
+    text-decoration: none;
+    color: dark;
+  }
