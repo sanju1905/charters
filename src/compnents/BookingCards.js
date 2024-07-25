@@ -1,51 +1,50 @@
-import React from 'react';
-import '../css/bookingcards.css'; // Ensure you have this CSS file or adjust according to your structure
-
-
-const bookings = [
-  {
-    from: 'New York',
-    to: 'Los Angeles',
-    date: '2024-08-01',
-    category: 'Business',
-    price: '$1200'
-  },
-  {
-    from: 'San Francisco',
-    to: 'Chicago',
-    date: '2024-08-05',
-    category: 'Economy',
-    price: '$800'
-  },
-  {
-    from: 'Miami',
-    to: 'Dallas',
-    date: '2024-08-10',
-    category: 'First Class',
-    price: '$1500'
-  },
-  {
-    from: 'Boston',
-    to: 'Seattle',
-    date: '2024-08-15',
-    category: 'Economy',
-    price: '$900'
-  },
-  // Add more bookings if needed
-];
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import '../css/bookingcards.css'; 
 
 const BookingCards = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBooking = async () => {
+      try {
+        const fetched = await axios.get('http://localhost:8000/api/admin/getallemptylegs');
+        setData(fetched.data.data);
+      } catch (error) {
+        console.log(error);
+        setError("Error fetching booking data.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBooking();
+
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <div>
       <hr />
       <h4 className="text-center my-4">Available Bookings</h4>
       <div className="row row-cols-1 row-cols-md-4 g-4">
-        {bookings.map((booking, index) => (
+        {data.map((booking, index) => (
           <div className="col" key={index}>
             <div className="card h-100 bg-light shadow-sm border-0 bg-white shadow-lg">
+              <img
+                src={booking.image }
+                className="card-img-top"
+                alt={booking.type}
+                loading="lazy"
+                style={{width:"100%",height:"200px",objectFit:"cover"}}
+              />
               <div className="card-body">
-                <h5 className="card-title">From: {booking.from}</h5><br />
-                <h6 className="card-subtitle text-muted">To: {booking.to}</h6><br />
+                <h5 className="card-title">From: {booking.from}</h5>
+                <h6 className="card-subtitle text-muted">To: {booking.to}</h6>
                 <p className="card-text">
                   <strong>Date:</strong> {booking.date}<br /><br />
                   <strong>Category:</strong> {booking.category}<br /><br />
@@ -57,7 +56,7 @@ const BookingCards = () => {
         ))}
       </div>
       <div className="d-flex justify-content-center mt-5">
-        <a href="/explore-more" className="btn btn-outline-primary">More Options</a>
+        <a href="/explore-more" className="btn btn-outline-primary">More Empty Legs</a>
       </div>
     </div>
   );

@@ -1,15 +1,23 @@
 import React from 'react';
-import Navabar from './compnents/Navabar';
-import Carousal from './compnents/Carousal';
-import Footer from './compnents/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './compnents/Navabar';
+import Explore from './compnents/Explore';
+import Emptylegs from './compnents/Emptylegs';
+
 const App = () => {
   return (
-    <div>
-  <Navabar/>
-  {/* <Carousal/> */}
-  {/* <Footer/> */}
-    </div>
-  )
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+         
+          <Route path='/charters' element={<Explore />} />
+          <Route path='/emptylegs' element={<Emptylegs />} />
+   
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

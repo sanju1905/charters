@@ -35,8 +35,8 @@ const Carousal = () => {
     <h1 class="display-5 fw-bold mb-3">Plan your Trip</h1>
     <p class="lead ">At My Air Deal, we specialize in providing exclusive access to private flights, including empty legs and charters. Our mission is to offer unparalleled convenience, luxury, and affordability for travelers seeking a premium flying experience without the premium price tag.</p>
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-      <a href="" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Charters</a>
-      <a href="" class="btn btn-outline-secondary btn-lg px-4 me-md-2">EmptyLegs</a>
+      <a href="/charters" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Charters</a>
+      <a href="/emptylegs" class="btn btn-outline-secondary btn-lg px-4 me-md-2">EmptyLegs</a>
     </div>
   </div>
   <hr></hr>

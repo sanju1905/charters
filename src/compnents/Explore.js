@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import image2 from "../assets/flight.jpg";
 import image1 from "../assets/jet.jpg";
 import axios from "axios";
-import Explore from "./Explore";
 
-const Cards = () => {
+
+const Explore = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -41,7 +40,6 @@ const Cards = () => {
                 className="card-img-top"
                 lazy="loading"
                 alt={category.type}
-                style={{width:"100%",height:"200px",objectFit:"cover"}}
               />
               <div className="card-body">
                 <h5 className="card-title">{category.type}</h5>
@@ -55,7 +53,7 @@ const Cards = () => {
 
       <div className="d-flex justify-content-center mt-5">
         <a
-          href="/charters"
+          href="/explore-more"
           className="btn btn-outline-success border-radius-2"
         >
           Explore More
@@ -67,4 +65,4 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default Explore;
