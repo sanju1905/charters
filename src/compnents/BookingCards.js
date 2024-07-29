@@ -11,7 +11,7 @@ const BookingCards = () => {
     const fetchBooking = async () => {
       try {
         const fetched = await axios.get('http://localhost:8000/api/admin/getallemptylegs');
-        setData(fetched.data.data);
+        setData(fetched.data.data.slice(-4)); // Get only the last 4 entries
       } catch (error) {
         console.log(error);
         setError("Error fetching booking data.");
@@ -21,7 +21,6 @@ const BookingCards = () => {
     };
 
     fetchBooking();
-
   }, []);
 
   if (loading) return <div>Loading...</div>;
@@ -30,24 +29,24 @@ const BookingCards = () => {
   return (
     <div>
       <hr />
-      <h4 className="text-center my-4">Available Bookings</h4>
-      <div className="row row-cols-1 row-cols-md-4 g-4">
+      <h4 className="text-center text-primary fw-bold my-4"><u>AVAILABLE EMPTYLEGS</u></h4>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         {data.map((booking, index) => (
           <div className="col" key={index}>
-            <div className="card h-100 bg-light shadow-sm border-0 bg-white shadow-lg">
+            <div className="card h-100 bg-dark text-light shadow-sm border-0">
               <img
-                src={booking.image }
+                src={booking.image}
                 className="card-img-top"
                 alt={booking.type}
                 loading="lazy"
-                style={{width:"100%",height:"200px",objectFit:"cover"}}
+                style={{width: "100%", height: "200px", objectFit: "cover"}}
               />
               <div className="card-body">
                 <h5 className="card-title">From: {booking.from}</h5>
                 <h6 className="card-subtitle text-muted">To: {booking.to}</h6>
                 <p className="card-text">
-                  <strong>Date:</strong> {booking.date}<br /><br />
-                  <strong>Category:</strong> {booking.category}<br /><br />
+                  <strong>Date:</strong> {booking.date}<br />
+                  <strong>Category:</strong> {booking.category}<br />
                   <strong>Price:</strong> {booking.price}
                 </p>
               </div>
@@ -56,7 +55,7 @@ const BookingCards = () => {
         ))}
       </div>
       <div className="d-flex justify-content-center mt-5">
-        <a href="/explore-more" className="btn btn-outline-primary">More Empty Legs</a>
+        <a href="/emptylegs" className="btn btn-outline-primary">More Empty Legs</a>
       </div>
     </div>
   );

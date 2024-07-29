@@ -1,18 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import "../css/styles.css";
-import Carousal from "./Carousal";
-import Cards from "./Cards";
-import Footer from "./Footer";
-import Booking from "./Booking";
-import BookingCards from "./BookingCards";
-import About from "./About";
-import Feedback from "./Feedback";
-import Emptylegs from "./Emptylegs";
-const Navbar = () => {
+
+const Navabar = () => {
   return (
-    <div className="container-fluid px-md-5 bg-white shadow-lg ">
-      <header className="container-fluid d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom ">
+    <div className="container-fluid px-md-5 bg-white shadow-lg">
+      <header className="container-fluid d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <h3 className="fw-bold">
           My<span className="text-primary">Air</span>Deal
         </h3>
@@ -45,16 +38,8 @@ const Navbar = () => {
           </form>
         </div>
       </header>
-      <Carousal />
-      <Booking />
-      <Cards />
-      <About />
-      <BookingCards />
-      <Feedback />
-      <Footer />
-
     </div>
   );
 };
 
-export default Navbar;
+export default Navabar;

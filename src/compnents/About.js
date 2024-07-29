@@ -1,7 +1,8 @@
 import React from 'react'
 import flight from '../assets/fav.png';
-import '../css/about.css'
+
 const About = () => {
+  
     return (
       <div className="container my-4">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-4">

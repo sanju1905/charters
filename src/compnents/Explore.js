@@ -30,7 +30,8 @@ const Explore = () => {
   return (
     <div>
       <hr></hr>
-      <h4>Explore Our Categories</h4>
+      <h4 className="text-center text-primary fw-bold my-4">EXPLORE OUR CATEGORIES</h4>
+     
       <div className="row row-cols-1 row-cols-md-4 g-4">
         {data.map((category) => (
           <div className="col" key={category._id}>
@@ -40,6 +41,7 @@ const Explore = () => {
                 className="card-img-top"
                 lazy="loading"
                 alt={category.type}
+                style={{width: "100%", height: "200px", objectFit: "cover"}}
               />
               <div className="card-body">
                 <h5 className="card-title">{category.type}</h5>
@@ -50,7 +52,7 @@ const Explore = () => {
           </div>
         ))}
       </div>
-
+{/* 
       <div className="d-flex justify-content-center mt-5">
         <a
           href="/explore-more"
@@ -59,7 +61,7 @@ const Explore = () => {
           Explore More
         </a>
         <br />
-      </div>
+      </div> */}
       <hr className="mb-3"></hr>
     </div>
   );
