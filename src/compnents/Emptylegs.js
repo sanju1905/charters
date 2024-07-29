@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../css/bookingcards.css'; 
-
+import { Link } from 'react-router-dom';
 const EmptyLegs = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,9 +31,16 @@ const EmptyLegs = () => {
     <div>
       <hr />
       <h4 className="text-center text-primary fw-bold my-4"><u>AVAILABLE EMPTY LEGS</u></h4>
+      <nav aria-label="breadcrumb ">
+        <ol className="breadcrumb mt-4">
+          <li className="breadcrumb-item mb-2"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Empty Legs</li>
+        </ol>
+      </nav>
       <div className="row row-cols-1 row-cols-md-4 g-4">
         {data.map((booking, index) => (
           <div className="col" key={index}>
+            <Link to={`/getemptylegsbyid/${booking._id}`}>
             <div className="card h-100 bg-light shadow-sm border-0 bg-white shadow-lg">
               <img
                 src={booking.image }
@@ -52,6 +59,7 @@ const EmptyLegs = () => {
                 </p>
               </div>
             </div>
+            </Link>
           </div>
         ))}
       </div>

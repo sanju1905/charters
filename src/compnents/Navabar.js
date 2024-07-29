@@ -16,8 +16,8 @@ const Navabar = () => {
             </Link>
           </li>
           <li>
-            <Link to='/about' className="nav-link link-secondary px-2 category__link1 fw-bold text-dark fs-5">
-              About
+            <Link to='/feedback' className="nav-link link-secondary px-2 category__link1 fw-bold text-dark fs-5">
+              Reviews
             </Link>
           </li>
           <li>

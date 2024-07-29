@@ -28,3 +28,36 @@
     }
   }
   
+
+  .carousel-item {
+   /* Blue border for feedback cards */
+    /* Sky blue background */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+ 
+  
+  .card-title {
+    color: #007bff; /* Bootstrap primary color */
+  }
+  
+  .card-subtitle {
+    color: #007bff; /* Bootstrap primary color */
+  }
+  
+  .card-text {
+    color: #333; /* Darker text color for better readability */
+  }
+  .carousel-item .card {
+    max-width: 50%; 
+   height: 100%;/* Adjust this value as needed */
+    margin: 0 auto; 
+    
+    /* Center the card horizontally */
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    /* Blue control icons */
+    border-radius: 50%;
+  }
+  

@@ -6,7 +6,7 @@ const Whyus = () => {
   return (
     <div className="container-fluid mt-5 mb-5">
       <center>
-        <h3 className="text-primary fw-bold"><u>BOOK WITH US</u></h3>
+        <h3 className="text-primary fw-bold"><u>WHY ONLU US</u></h3>
       </center>
       <div className="row justify-content-center bg-dark text-light shadow-lg p-4 rounded">
         <div className="col-md-4 d-flex justify-content-center align-items-center mb-3 mb-md-0">

@@ -33,7 +33,7 @@ const BookingCards = () => {
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         {data.map((booking, index) => (
           <div className="col" key={index}>
-            <div className="card h-100 bg-dark text-light shadow-sm border-0">
+            <div className="card h-100 shadow-lg  text-light shadow-sm border-0">
               <img
                 src={booking.image}
                 className="card-img-top"

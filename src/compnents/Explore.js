@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import image1 from "../assets/jet.jpg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 const Explore = () => {
@@ -31,10 +32,18 @@ const Explore = () => {
     <div>
       <hr></hr>
       <h4 className="text-center text-primary fw-bold my-4">EXPLORE OUR CATEGORIES</h4>
-     
+      <nav aria-label="breadcrumb ">
+        <ol className="breadcrumb mt-4">
+          <li className="breadcrumb-item mb-2"><Link to="/">Home</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Charters Categories</li>
+        </ol>
+      </nav>
       <div className="row row-cols-1 row-cols-md-4 g-4">
+     
         {data.map((category) => (
-          <div className="col" key={category._id}>
+       
+           <div className="col" key={category._id}>
+            <Link to={`/getcharterbyid/${category._id}`} className="text-decoration-none">
             <div className="card h-100 bg-white shadow-lg">
               <img
                 src={category.image || image1} // Fallback image
@@ -49,19 +58,11 @@ const Explore = () => {
                 <p className="card-text">Price: {category.price}</p>
               </div>
             </div>
+            </Link>
           </div>
+     
         ))}
       </div>
-{/* 
-      <div className="d-flex justify-content-center mt-5">
-        <a
-          href="/explore-more"
-          className="btn btn-outline-success border-radius-2"
-        >
-          Explore More
-        </a>
-        <br />
-      </div> */}
       <hr className="mb-3"></hr>
     </div>
   );
