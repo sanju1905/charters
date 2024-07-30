@@ -24,13 +24,13 @@ const Feedback = () => {
       setErrorMessage('');
     } catch (error) {
       console.error('Error submitting feedback:', error);
-      setErrorMessage('An error occurred while submitting your feedback.');
+      setErrorMessage('The email account that you tried to reach does not exist.');
       setResponseMessage('');
     }
   };
 
   return (
-    <div className="container my-5">
+    <div className="container my-5 text-white">
       <div className="row mb-5 align-items-center p-3">
         <div className="col-12 col-lg-6 d-flex justify-content-center mb-4 mb-lg-0">
           <img
@@ -43,7 +43,7 @@ const Feedback = () => {
           />
         </div>
         <div className="col-12 col-lg-6">
-          <h2 className="text-center mb-4">Contact Us</h2>
+          <h2 className="text-center mb-4">CONTACT US</h2>
           <form onSubmit={submitHandler}>
             <div className="row mb-3">
               <div className="col-md-6">

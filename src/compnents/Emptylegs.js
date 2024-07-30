@@ -40,7 +40,7 @@ const EmptyLegs = () => {
       <div className="row row-cols-1 row-cols-md-4 g-4">
         {data.map((booking, index) => (
           <div className="col" key={index}>
-            <Link to={`/getemptylegsbyid/${booking._id}`}>
+            <Link to={`/getemptylegsbyid/${booking._id}`} className='text-decoration-none'>
             <div className="card h-100 bg-light shadow-sm border-0 bg-white shadow-lg">
               <img
                 src={booking.image }

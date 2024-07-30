@@ -48,11 +48,11 @@ const Booking = () => {
   };
 
   return (
-    <div className="card bg-dark text-light container mt-5 mb-5 shadow-lg">
-      <div className="card-body d-flex flex-column justify-content-center align-items-center">
+    <div className="card bg-light text-dark container mb-5 shadow-lg">
+      <div className="card-body d-flex flex-column justify-content-center ">
         <h3 className="card-title text-primary fw-bold"><u>BOOK YOUR FLIGHT WE WILL CONTACT YOU</u></h3>
         <hr />
-        <form className="w-100" onSubmit={submitHandler}>
+        <form className="d-absolute" onSubmit={submitHandler}>
           <div className="row g-3 justify-content-center">
             <div className="col-md-4">
               <label htmlFor="email" className="form-label">Email</label>

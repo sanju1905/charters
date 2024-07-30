@@ -75,11 +75,16 @@ const Charterdetails = () => {
                 <li className="list-group-item"><strong>Passengers:</strong> {charter.passengers}</li>
                 <li className="list-group-item"><strong>Speed:</strong> {charter.speed}</li>
                 <li className="list-group-item"><strong>Price:</strong> {charter.price}</li>
-                <li className="list-group-item"><strong>Availability:</strong> {charter.availability}</li>
+                <li className={`list-group-item fw-bold ${charter.availability === "yes" ? 'text-success' :'text-danger'}`}><strong>Availability:</strong> {charter.availability}</li>
               </ul>
+              <Link to="/bookflight">
+            <button className="btn btn-primary mt-3">Book a Flight</button>
+          </Link>
             </div>
+
           </div>
         </div>
+       
       </div>
     </div>
   );

@@ -9,7 +9,8 @@ import Feedback from './compnents/Feedback';
 import Showfeedback from './compnents/Showfeedback';
 import Charterdetails from './compnents/Charterdetails';
 import Emptylegsdetails from './compnents/Emptylegsdetails';
-
+import Search from './compnents/Search';
+import Booking from './compnents/Booking';
 const App = () => {
   return (
     <Router>
@@ -23,6 +24,8 @@ const App = () => {
         <Route path='/feedback' element={<Showfeedback/>}/>
         <Route path="/getcharterbyid/:id" element={<Charterdetails />} />
         <Route path="/getemptylegsbyid/:id" element={<Emptylegsdetails />} />
+        <Route path='/search' element={<Search/>}/>
+        <Route path='/bookflight' element={<Booking/>}/>
       </Routes>
     </Router>
   );

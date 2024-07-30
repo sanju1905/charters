@@ -8,7 +8,7 @@ import Feedback from "./Feedback";
 import Whyus from "./Whyus";
 const Home = () => {
   return (
-    <div>
+    <div className="bg-dark">
       <Carousel />
       <Booking />
       <Cards />
